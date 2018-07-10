@@ -1,0 +1,21 @@
+model {
+
+    for(i in 1:nCats) {
+      Y[i] ~ dnorm(mu[i], prec_sigma2)
+      mu[i] <- alpha[X[i]]+beta[1] + beta[2]*Dose[i] + beta[3]*Type[i]
+    }
+    
+    for(j in 1:nBreeds) {
+      alpha[j] ~ dnorm(gamma*Domestic[j], prec_tau2)
+    }
+    
+    for(k in 1:pCats) {
+      beta[k] ~ dnorm(0, 1/100)
+    }
+    
+    gamma ~ dnorm(0, 1/100)
+    prec_sigma2 ~ dgamma(3, 10)
+    sigma2 <- pow(prec_sigma2, -1)
+    prec_tau2 ~ dgamma(3, 10)
+    tau2_alpha <- pow(prec_tau2, -1)
+}
