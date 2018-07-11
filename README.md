@@ -4,7 +4,7 @@ A clinical trial was conducted by veterinarians specializing in feline internal 
 
 ## Variable Descriptions
 
-`DeltaPCV:` The cell volume that belongs to a cat.
+- `DeltaPCV:` The cell volume that belongs to a cat.
 - `Type:` The type of erythrocytosis sustained by a cat (Primary = 1; Secondary = 0).
 - `Dose:` The dose of the drug hydroxyurea given to a cat.
 - `Breed:` The breed of a cat (A,B,C = 1; D,E = 0).
